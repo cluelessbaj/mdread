@@ -1,0 +1,11 @@
+# Binaries
+/bin/
+/mdread
+
+# OS & Editor files
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

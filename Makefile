@@ -14,6 +14,7 @@ test:
 
 install: build
 	mkdir -p $(PREFIX)
+	rm -f $(PREFIX)/$(BINARY_NAME)
 	cp bin/$(BINARY_NAME) $(PREFIX)/$(BINARY_NAME)
 	@echo "Installed $(BINARY_NAME) to $(PREFIX)/$(BINARY_NAME)"
 

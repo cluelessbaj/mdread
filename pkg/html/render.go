@@ -144,6 +144,67 @@ func RenderHTML(doc *markdown.Document, title string) string {
     dl { display: grid; grid-template-columns: 120px 1fr; row-gap: 0.3em; margin: 0; }
     dt { font-weight: bold; color: var(--accent); }
     .task-item { list-style: none; margin-left: -1.2em; }
+
+    /* Print & PDF Stylesheet */
+    @page {
+      size: auto;
+      margin: 1.6cm 1.4cm;
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #111827 !important;
+        font-size: 11pt !important;
+        line-height: 1.5 !important;
+        padding: 0 !important;
+      }
+      .container {
+        max-width: 100%% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        color: #111827 !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+      }
+      h1 { color: #0969da !important; }
+      pre, blockquote, table, .metadata-box {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      pre {
+        background-color: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        color: #0f172a !important;
+      }
+      code {
+        background-color: #f1f5f9 !important;
+        border: 1px solid #cbd5e1 !important;
+        color: #0f172a !important;
+      }
+      table, th, td {
+        border-color: #cbd5e1 !important;
+      }
+      th {
+        background-color: #f1f5f9 !important;
+        color: #0f172a !important;
+      }
+      tr:nth-child(even) {
+        background-color: #f8fafc !important;
+      }
+      a {
+        color: #0969da !important;
+        text-decoration: underline !important;
+      }
+      .metadata-box {
+        background-color: #f8fafc !important;
+        border: 1px solid #cbd5e1 !important;
+      }
+    }
   </style>
 </head>
 <body>
